@@ -15,6 +15,17 @@
 	Theme Support
 \*------------------------------------*/
 
+/* Theme setup (this is from the phptuts deal..) */
+add_action( 'after_setup_theme', 'wpt_setup' );
+    if ( ! function_exists( 'wpt_setup' ) ):
+        function wpt_setup() {
+            register_nav_menu( 'Primary', __( 'Primary navigation', 'wptuts' ) );
+        } endif;
+
+require_once('scripts/php/wp_bootstrap_walker.php');
+
+/* end custom content */
+
 if (!isset($content_width))
 {
     $content_width = 900;
@@ -68,11 +79,11 @@ function html5blank_nav()
 	wp_nav_menu(
 	array(
 		'theme_location'  => 'header-menu',
-		'menu'            => '',
+		'menu'            => 'Primary',
 		'container'       => 'div',
 		'container_class' => 'menu-{menu slug}-container',
 		'container_id'    => '',
-		'menu_class'      => 'menu',
+		'menu_class'      => 'menu','navbar-fixed-top','navbar-inverse',
 		'menu_id'         => '',
 		'echo'            => true,
 		'fallback_cb'     => 'wp_page_menu',
@@ -91,6 +102,11 @@ function html5blank_nav()
 function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+        wp_register_script('jQuery', get_template_directory_uri() . '/scripts/jquery/jquery-1.11.2.js', array(), '1.11.2'); //jQuery
+        wp_enqueue_script('jQuery'); //Enqueue it!
+
+        wp_register_script('bootstrapsjs', get_template_directory_uri() . '/scripts/bootstraps/js/bootstrap.min.js', array(), '3.3.2'); //Bootstraps
+        wp_enqueue_script('bootstrapsjs'); //Enqueue it!
 
     	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
         wp_enqueue_script('conditionizr'); // Enqueue it!
@@ -115,6 +131,16 @@ function html5blank_conditional_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
+
+    wp_register_style('fontawesome', get_template_directory_uri() . '/scripts/fontawesome/css/font-awesome.css', array(), '4.3.0', 'all');
+    wp_enqueue_script('fontawesome'); //Enqueue it!
+
+    wp_register_style('bootstraps', get_template_directory_uri() . 'scripts/bootstraps/css/bootstrap.css', array(), '3.3.2','all');
+    wp_enqueue_script('bootstraps'); //Enqueue it!
+
+    wp_register_style('redwavecomm', get_template_directory_uri() . '/redwave.css', array(), '1.0', 'all');
+    wp_enqueue_style('redwavecomm'); //Enqueue it!
+
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 

@@ -1,17 +1,23 @@
-			<!-- footer -->
-			<footer class="footer" role="contentinfo">
+<!--======================= Footer Start ==========================-->
 
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-				</p>
-				<!-- /copyright -->
-
-			</footer>
-			<!-- /footer -->
-
+<footer id="footer">
+	<div class="container">
+		<div class="col-md-6">
+			<span>&copy;2015 REDWAVE COMMUNICATIONS</span>
 		</div>
+		<div class="col-md-6">
+			<ul>
+				<li>DVBE</li>
+				<li>NICET</li>
+				<li>BICSI</li>
+				<li>RCDD</li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<!--===================== Footer Close =====================-->
+
+</div>
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
