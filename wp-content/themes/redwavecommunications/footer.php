@@ -16,11 +16,9 @@
 	</div>
 </footer>
 <!--===================== Footer Close =====================-->
-
-</div>
 		<!-- /wrapper -->
 
-		<?php wp_footer(); ?>
+
 
 		<!-- analytics -->
 		<script>

@@ -77,6 +77,8 @@ resident and business solutions
 }
 
 #right {
+    margin: 0 0;
+    padding: 0 0;
     border-left: 12px solid #fff;
     min-height: 480px;
     background-color: #999;
@@ -311,7 +313,7 @@ contact section
     border-right: 1px solid #000
 }
 
-contact-form>textarea { 
+#contact-form>textarea {
     width: 600px;
     height: 100px;
 }
