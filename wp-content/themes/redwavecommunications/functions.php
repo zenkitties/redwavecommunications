@@ -64,7 +64,7 @@ if (function_exists('add_theme_support'))
 \*------------------------------------*/
 
 // HTML5 Blank navigation
-function html5blank_nav()
+function redwave_nav()
 {
 	wp_nav_menu(
 	array(
@@ -199,6 +199,8 @@ if (function_exists('register_sidebar'))
     register_sidebar(array(
         'name' => __('Search Bar Widget'),
         'description' => __('This is where the search bar is going to go...'),
+        'before_widget' => '',
+        'after_widget' => '',
         'id' => 'widget-area-search',
     ));
 }

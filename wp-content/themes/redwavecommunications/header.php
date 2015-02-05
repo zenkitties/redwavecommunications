@@ -27,7 +27,7 @@
 	<body <?php body_class(); ?>>
 
 		<!-- wrapper -->
-		<div class="wrapper">
+		<div class="container col-md-24">
 
 			<!-- header -->
 			<header class="header clear" role="banner">
@@ -38,7 +38,7 @@
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
 							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img">
 						</a>
-						<?php bloginfo('description'); ?><br />
+						<i><span id="tagline"><?php bloginfo('description'); ?></span><br /></i>
 					</div>
 
 
@@ -57,7 +57,7 @@
 							</button>
 						</div>
 						<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-search')) ?>
-						<?php html5blank_nav(); ?>
+						<?php redwave_nav(); ?>
 					</div><!-- /.container -->
 				</nav><!-- /.navbar -->
 

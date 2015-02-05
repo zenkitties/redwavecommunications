@@ -10,7 +10,7 @@
 	License: MIT
 	License URI: http://opensource.org/licenses/mit-license.php
 */
-
+@import url('scripts/fontawesome/css/font-awesome.css');
 @import url('scripts/bootstraps/css/bootstrap.css');
 @import url('redwave.css');
 /*------------------------------------*\
@@ -32,7 +32,7 @@ html {
 	font-size:62.5%;
 }
 body {
-	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font:300 14px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color:#444;
 }
 /* clear */
@@ -53,7 +53,7 @@ img {
 	vertical-align:bottom;
 }
 a {
-	color:#444;
+	color:#fff;
 	text-decoration:none;
 }
 a:hover {
