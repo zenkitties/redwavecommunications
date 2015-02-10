@@ -43,7 +43,7 @@
                             <li><a href="#">Service & Maintanence ></a></li>
                         </ul>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <h4>SYSTEMS</h4>
                         <ul>
                             <li>+Audio Systems</li>
