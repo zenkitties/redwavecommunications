@@ -90,6 +90,14 @@
 		return false;
 	};
 
+	wp.ccf.utils.isFieldFile = function( value ) {
+		if ( typeof value.id !== 'undefined' && typeof value.url !== 'undefined' && typeof value.file_name !== 'undefined' ) {
+			return true;
+		}
+
+		return false;
+	};
+
 	wp.ccf.utils.getPrettyFieldEmailConfirm = function( value ) {
 		if ( value.email ) {
 			return value.email;
@@ -271,7 +279,7 @@
 	 */
 	var _modelDecode = function( excludeKeys ) {
 		for ( var key in this.attributes ) {
-			if ( excludeKeys.indexOf( key ) === -1 ) {
+			if ( _.indexOf( excludeKeys, key ) === -1 ) {
 				var value = this.get( key );
 
 				if ( typeof value === 'string' && value !== '' ) {
@@ -491,7 +499,8 @@
 					slug: '',
 					type: '',
 					required: false,
-					className: ''
+					className: '',
+					description: ''
 				};
 
 				return _.defaults( defaults, this.constructor.__super__.defaults );
@@ -504,6 +513,20 @@
 			defaults: function() {
 				var defaults = {
 					type: 'single-line-text'
+				};
+
+				return _.defaults( defaults, this.constructor.__super__.defaults() );
+			}
+		}
+	);
+
+	wp.ccf.models.Fields.file = wp.ccf.models.Fields.file || wp.ccf.models.StandardField.extend(
+		{
+			defaults: function() {
+				var defaults = {
+					type: 'file',
+					fileExtensions: '',
+					maxFileSize: ccfSettings.maxFileSize
 				};
 
 				return _.defaults( defaults, this.constructor.__super__.defaults() );
@@ -988,13 +1011,45 @@
 			},
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
 
 				this.model.set( 'slug', this.el.querySelectorAll( '.field-slug' )[0].value );
 				this.model.set( 'label', this.el.querySelectorAll( '.field-label' )[0].value );
+				this.model.set( 'description', this.el.querySelectorAll( '.field-description' )[0].value );
 				this.model.set( 'value', this.el.querySelectorAll( '.field-value' )[0].value );
 				this.model.set( 'placeholder', this.el.querySelectorAll( '.field-placeholder' )[0].value );
 				this.model.set( 'className', this.el.querySelectorAll( '.field-class-name' )[0].value );
 				this.model.set( 'required', ( this.el.querySelectorAll( '.field-required' )[0].value == 1 ) ? true : false  );
+
+				return this;
+			}
+		}
+	);
+
+	wp.ccf.views.Fields.file = wp.ccf.views.Fields.file || wp.ccf.views.FieldBase.extend(
+		{
+			template: wp.ccf.utils.template( 'ccf-file-template' ),
+
+			initialize: function() {
+
+			},
+
+			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
+
+				this.model.set( 'slug', this.el.querySelectorAll( '.field-slug' )[0].value );
+				this.model.set( 'label', this.el.querySelectorAll( '.field-label' )[0].value );
+				this.model.set( 'description', this.el.querySelectorAll( '.field-description' )[0].value );
+				this.model.set( 'className', this.el.querySelectorAll( '.field-class-name' )[0].value );
+				this.model.set( 'required', ( this.el.querySelectorAll( '.field-required' )[0].value == 1 ) ? true : false  );
+				this.model.set( 'fileExtensions', this.el.querySelectorAll( '.field-file-extensions' )[0].value );
+				this.model.set( 'maxFileSize', this.el.querySelectorAll( '.field-max-file-size' )[0].value );
 
 				return this;
 			}
@@ -1010,7 +1065,13 @@
 			},
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
+
 				this.model.set( 'label', this.el.querySelectorAll( '.field-label' )[0].value );
+				this.model.set( 'description', this.el.querySelectorAll( '.field-description' )[0].value );
 				this.model.set( 'siteKey', this.el.querySelectorAll( '.field-site-key' )[0].value );
 				this.model.set( 'secretKey', this.el.querySelectorAll( '.field-secret-key' )[0].value );
 				this.model.set( 'className', this.el.querySelectorAll( '.field-class-name' )[0].value );
@@ -1029,6 +1090,11 @@
 			},
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
+
 				this.model.set( 'heading', this.el.querySelectorAll( '.field-heading' )[0].value );
 				this.model.set( 'subheading', this.el.querySelectorAll( '.field-subheading' )[0].value );
 				this.model.set( 'className', this.el.querySelectorAll( '.field-class-name' )[0].value );
@@ -1047,6 +1113,11 @@
 			},
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
+
 				this.model.set( 'html', this.el.querySelectorAll( '.field-html' )[0].value );
 				this.model.set( 'className', this.el.querySelectorAll( '.field-class-name' )[0].value );
 
@@ -1060,9 +1131,14 @@
 			template: wp.ccf.utils.template( 'ccf-paragraph-text-template' ),
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
 
 				this.model.set( 'slug', this.el.querySelectorAll( '.field-slug' )[0].value );
 				this.model.set( 'label', this.el.querySelectorAll( '.field-label' )[0].value );
+				this.model.set( 'description', this.el.querySelectorAll( '.field-description' )[0].value );
 				this.model.set( 'value', this.el.querySelectorAll( '.field-value' )[0].value );
 				this.model.set( 'placeholder', this.el.querySelectorAll( '.field-placeholder' )[0].value );
 				this.model.set( 'className', this.el.querySelectorAll( '.field-class-name' )[0].value );
@@ -1078,6 +1154,10 @@
 			template: wp.ccf.utils.template( 'ccf-hidden-template' ),
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
 
 				this.model.set( 'slug', this.el.querySelectorAll( '.field-slug' )[0].value );
 				this.model.set( 'value', this.el.querySelectorAll( '.field-value' )[0].value );
@@ -1093,9 +1173,14 @@
 			template: wp.ccf.utils.template( 'ccf-date-template' ),
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
 
 				this.model.set( 'slug', this.el.querySelectorAll( '.field-slug' )[0].value );
 				this.model.set( 'label', this.el.querySelectorAll( '.field-label' )[0].value );
+				this.model.set( 'description', this.el.querySelectorAll( '.field-description' )[0].value );
 
 				var value = this.el.querySelectorAll( '.field-value' );
 				if ( value.length > 0 ) {
@@ -1125,9 +1210,14 @@
 			template: wp.ccf.utils.template( 'ccf-name-template' ),
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
 
 				this.model.set( 'slug', this.el.querySelectorAll( '.field-slug' )[0].value );
 				this.model.set( 'label', this.el.querySelectorAll( '.field-label' )[0].value );
+				this.model.set( 'description', this.el.querySelectorAll( '.field-description' )[0].value );
 				this.model.set( 'className', this.el.querySelectorAll( '.field-class-name' )[0].value );
 				this.model.set( 'required', ( this.el.querySelectorAll( '.field-required' )[0].value == 1 ) ? true : false  );
 
@@ -1141,9 +1231,14 @@
 			template: wp.ccf.utils.template( 'ccf-website-template' ),
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
 
 				this.model.set( 'slug', this.el.querySelectorAll( '.field-slug' )[0].value );
 				this.model.set( 'label', this.el.querySelectorAll( '.field-label' )[0].value );
+				this.model.set( 'description', this.el.querySelectorAll( '.field-description' )[0].value );
 				this.model.set( 'value', this.el.querySelectorAll( '.field-value' )[0].value );
 				this.model.set( 'placeholder', this.el.querySelectorAll( '.field-placeholder' )[0].value );
 				this.model.set( 'className', this.el.querySelectorAll( '.field-class-name' )[0].value );
@@ -1159,9 +1254,14 @@
 			template: wp.ccf.utils.template( 'ccf-phone-template' ),
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
 
 				this.model.set( 'slug', this.el.querySelectorAll( '.field-slug' )[0].value );
 				this.model.set( 'label', this.el.querySelectorAll( '.field-label' )[0].value );
+				this.model.set( 'description', this.el.querySelectorAll( '.field-description' )[0].value );
 				this.model.set( 'value', this.el.querySelectorAll( '.field-value' )[0].value );
 				this.model.set( 'placeholder', this.el.querySelectorAll( '.field-placeholder' )[0].value );
 				this.model.set( 'phoneFormat', this.el.querySelectorAll( '.field-phone-format' )[0].value );
@@ -1178,9 +1278,14 @@
 			template: wp.ccf.utils.template( 'ccf-address-template' ),
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
 
 				this.model.set( 'slug', this.el.querySelectorAll( '.field-slug' )[0].value );
 				this.model.set( 'label', this.el.querySelectorAll( '.field-label' )[0].value );
+				this.model.set( 'description', this.el.querySelectorAll( '.field-description' )[0].value );
 				this.model.set( 'addressType', this.el.querySelectorAll( '.field-address-type' )[0].value );
 				this.model.set( 'className', this.el.querySelectorAll( '.field-class-name' )[0].value );
 				this.model.set( 'required', ( this.el.querySelectorAll( '.field-required' )[0].value == 1 ) ? true : false  );
@@ -1195,9 +1300,14 @@
 			template: wp.ccf.utils.template( 'ccf-email-template' ),
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
 
 				this.model.set( 'slug', this.el.querySelectorAll( '.field-slug' )[0].value );
 				this.model.set( 'label', this.el.querySelectorAll( '.field-label' )[0].value );
+				this.model.set( 'description', this.el.querySelectorAll( '.field-description' )[0].value );
 
 				var value = this.el.querySelectorAll( '.field-value' );
 				if ( value.length ) {
@@ -1243,9 +1353,14 @@
 			},
 
 			saveField: function() {
+				// @todo: fix this ie8 hack
+				if ( this.el.innerHTML === '' ) {
+					return;
+				}
 
 				this.model.set( 'slug', this.el.querySelectorAll( '.field-slug' )[0].value );
 				this.model.set( 'label', this.el.querySelectorAll( '.field-label' )[0].value );
+				this.model.set( 'description', this.el.querySelectorAll( '.field-description' )[0].value );
 				this.model.set( 'className', this.el.querySelectorAll( '.field-class-name' )[0].value );
 				this.model.set( 'required', ( this.el.querySelectorAll( '.field-required' )[0].value == 1 ) ? true : false  );
 
@@ -2285,6 +2400,7 @@
 						wordChop: wp.ccf.utils.wordChop,
 						isFieldDate: wp.ccf.utils.isFieldDate,
 						isFieldName: wp.ccf.utils.isFieldName,
+						isFieldFile: wp.ccf.utils.isFieldFile,
 						isFieldAddress: wp.ccf.utils.isFieldAddress,
 						isFieldEmailConfirm: wp.ccf.utils.isFieldEmailConfirm,
 						getPrettyFieldDate: wp.ccf.utils.getPrettyFieldDate,
