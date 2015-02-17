@@ -35,7 +35,7 @@
             <div class="image" style="background:url('<?php echo $src[0]; ?>') center no-repeat; background-size: cover;">
 
             </div><!--Images in side products-->
-            <div class="infocontainer info">
+            <div class="infocontainer row">
                 <div class="col-md-14">
                     <p><?php echo types_render_field('system-description', array('output'=>'html')); ?></p>
                 </div><!--info section-->

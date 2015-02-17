@@ -1,7 +1,7 @@
 </div>
 <!--======================= Footer Start ==========================-->
 <div class="container col-md-24">
-<footer id="footer">
+<footer id="footer row">
 	<div class="container">
 		<div class="col-md-6">
 			<span>&copy;2015 REDWAVE COMMUNICATIONS</span>

@@ -292,7 +292,7 @@ business solutions css
     top: -100px;
     left: 50px;
     z-index: 1000;
-    height: 200px;
+    min-height: 100%;
     width: 400px;
     border: 2px solid #000;
 }
@@ -607,5 +607,34 @@ MEDIA QUERIES
     .navbar-collapse>a {
         width: 100%;
         text-align: center;
+    }
+
+    /*=========================== systems media queries ======================
+    ========================================================================*/
+
+    .description {
+        width: 100%;
+        margin: 0 0 20px 3px;
+        padding: 0 0 0 0;
+        font-family: Tahoma,Arial,san-serif;
+
+    }
+
+    #tagline {
+        display:none;
+    }
+
+    .infocontainer {
+        display: none;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        background-color: #fff;
+        position: relative;
+        top: -100px;
+        left: -25px;
+        z-index: 1000;
+        min-height: 100%;
+        width: 125%;
+        border: 2px solid #000;
     }
 }

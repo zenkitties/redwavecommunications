@@ -56,8 +56,10 @@
 								<span class="icon-bar"></span>
 							</button>
 						</div>
+						<div class="collapse navbar-collapse">
 						<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-search')) ?>
 						<?php redwave_nav(); ?>
+							</div>
 					</div><!-- /.container -->
 				</nav><!-- /.navbar -->
 
