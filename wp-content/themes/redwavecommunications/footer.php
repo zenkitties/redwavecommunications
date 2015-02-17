@@ -14,6 +14,8 @@
 	</div>
 <!--===================== Footer Close =====================-->
 		<!-- /wrapper -->
+
+
 <?php wp_footer(); ?>
 	</body>
 </html>

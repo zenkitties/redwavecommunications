@@ -50,6 +50,10 @@ a:hover, a:focus {
     color: #999;
 }
 
+.display {
+    display: block !important;
+}
+
 
 /* =======================================================
 search bar goodies
@@ -230,6 +234,10 @@ System Boxes
     
 }
 
+.imgdesc {
+    padding: 4px;
+}
+
 .image {
     width: auto;
     min-height: 80%;
@@ -243,7 +251,7 @@ System Boxes
 
 .products .info p, ul {
     font-size: 12px;
-    margin: 0 0 0 0;
+    margin: 5px 0;
     padding: 0 0 0 0;
     list-style-type: none;
 }
@@ -253,6 +261,7 @@ System Boxes
 .description {
     width: 25%;
     margin: 0 0 20px 3px;
+    padding: 0 0 0 0;
     font-family: Tahoma,Arial,san-serif;
     
 }
@@ -275,6 +284,7 @@ business solutions css
 /* ============= Information Div ================ */
 
 .infocontainer {
+    display: none;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     background-color: #fff;
@@ -552,7 +562,7 @@ MEDIA QUERIES
 
 @media only screen and (max-width: 750px) {
 
-    
+
     #left {
         padding: 15px 0;
         border-right: none;

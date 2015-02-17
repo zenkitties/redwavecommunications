@@ -9,3 +9,10 @@
 	});
 	
 })(jQuery, this);
+
+
+$(document).ready(function(){
+	$('.image').hover(function(){
+		$('.infocontainer').toggle();
+	});
+});
