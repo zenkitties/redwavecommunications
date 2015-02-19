@@ -27,7 +27,7 @@
 	<body <?php body_class(); ?>>
 
 		<!-- wrapper -->
-		<div class="container col-md-24">
+		<div class="col-md-24">
 
 			<!-- header -->
 			<header class="header clear" role="banner">
@@ -47,7 +47,7 @@
 					<!-- nav -->
 				<!--===================== Navbar coding ============================-->
 				<nav class="navbar navbar-fixed-top navbar-inverse pull-right">
-					<div class="container">
+					<div class="col-md-24">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 								<span class="sr-only">Toggle navigation</span>

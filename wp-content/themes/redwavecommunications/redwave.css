@@ -22,12 +22,6 @@ General
     padding: 12px 20px;
 }
 
-.container {
-    margin: 0 0;
-    padding: 0 0;
-    width: 100%
-}
-
 a {
     color: #993333;
     text-decoration: none;
@@ -54,6 +48,47 @@ a:hover, a:focus {
     display: block !important;
 }
 
+
+.pad {
+    padding: 0 15px;
+}
+
+/*=======================================================================
+HOME PAGE CUSTOM STYLES
+=======================================================================*/
+
+/* ======================================================
+navbar css
+=======================================================*/
+
+.navbar-form {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.navbar-nav > li > a {
+    line-height: 12px;
+}
+
+.navbar li a {
+    color: #fff;
+}
+
+.navbar {
+    background-color: #666;
+    font-family: Tahoma, Arial, san-serif;
+    height: 44px;
+}
+
+
+.navbar ul li:hover:after{
+    border-bottom: 5px solid #993333;
+    content: "";
+    padding: 3px 0 0 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
 
 /* =======================================================
 search bar goodies
@@ -95,95 +130,8 @@ logo container
 }
 
 /* =====================================================
-resident and business solutions
-======================================================*/
-#main-container {
-    width: 100%;
-    height: 100%;
-    padding: 0 0;
-    margin: 0 0 0 0;
-}
-#left {
-    background: #fff url("img/left-side-front.png") no-repeat right;
-    background-size: cover;
-    padding: 20px 20px 0 0;
-    border-right: 12px solid #fff;
-    min-height: 419px;
-    text-align: right;
-}
-
-#left li {
-    font: 16px Tahoma,Arial,san-serif;
-    padding: 5px 0 0 0;
-}
-
-#right {
-    background: #fff url("img/right-side-front.png") no-repeat left;
-    background-size: cover;
-    margin: 0 0;
-    padding: 20px 0 0 10px;
-    border-left: 12px solid #fff;
-    min-height: 419px;
-    min-width: 628px;
-    text-align: left;
-}
-
-#right li {
-    font: 16px Tahoma,Arial,san-serif;
-    padding: 5px 0 0 0;
-}
-
-#getestimate {
-    padding: 10px 0;
-    position: absolute;
-    color: #fff;
-    background-color: #993333;
-    opacity: .85;
-    z-index: 9999;
-    top: 75%;
-    left: 44%;
-    height: 40px;
-    width: 150px;
-    text-align: center;
-}
-/* ======================================================
-navbar css
-=======================================================*/
-
-.navbar-form {
-    margin: 0 0;
-    padding: 0 0;
-}
-
-.navbar-nav > li > a {
-    line-height: 12px;
-}
-
-.navbar li a {
-    color: #fff;
-}
-
-.navbar {
-    background-color: #666;
-    font-family: Tahoma, Arial, san-serif;
-    height: 44px;
-}
-
-
-.navbar ul li:hover:after{
-  border-bottom: 5px solid #993333;
-  content: "";
-    padding: 3px 0 0 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
- }
-
-/* =====================================================
 footer Stuffs
 ======================================================*/
-
-
 
 footer {
     padding: 10px 0;
@@ -213,9 +161,141 @@ footer {
 }
 
 
-/*=====================================================
-System Boxes
-=====================================================*/
+/* ==================================================================
+ABOUT US STYLES
+===================================================================*/
+
+.about-container {
+    min-height: 600px;
+}
+
+.about-top {
+    background: #993333 url("img/about-us.png") no-repeat left;
+    background-size: cover;
+    color: #fff;
+    padding: 10px 20px;
+    height: 250px;
+}
+.about-bottom {
+
+    padding: 20px 20px;
+    min-height: 350px;
+    text-align: left;
+}
+
+#about {
+    padding: 30px 0;
+    margin: 0 0;
+    line-height: 300%;
+}
+
+.bottomexpand {
+    font: 30px Helvetica, Tahoma, Arial, san-serif;
+    position: relative;
+    top: 195px;
+    letter-spacing: 4px;
+}
+
+/* ========================================================================
+RESIDENTIAL AND BUSINESS STYLES
+=========================================================================*/
+
+#main-container {
+    width: 100%;
+    height: 100%;
+    padding: 0 0;
+    margin: 0 0 0 0;
+}
+#left {
+    background: #fff url("img/left-side-front.png") no-repeat right;
+    background-size: cover;
+    margin: 0 0;
+    padding: 20px 20px 0 0;
+    border-right: 12px solid #fff;
+    min-height: 419px;
+    text-align: right;
+}
+
+#left li {
+    font: 16px Tahoma,Arial,san-serif;
+    padding: 5px 0 0 0;
+}
+
+#right {
+    background: #fff url("img/right-side-front.png") no-repeat left;
+    background-size: cover;
+    margin: 0 0;
+    padding: 20px 0 0 10px;
+    border-left: 12px solid #fff;
+    min-height: 419px;
+    text-align: left;
+}
+
+#right li {
+    font: 16px Tahoma,Arial,san-serif;
+    padding: 5px 0 0 0;
+}
+
+#getestimate {
+    padding: 10px 0;
+    position: absolute;
+    color: #fff;
+    background-color: #993333;
+    opacity: .85;
+    z-index: 9999;
+    top: 75%;
+    left: 44%;
+    height: 40px;
+    width: 150px;
+    text-align: center;
+}
+
+.business-container{
+    min-height: 470px;
+    padding: 0 0 10px 0;
+    margin: 0 20px;
+    list-style: none;
+}
+
+.business-container a:hover, a:focus {
+    color: #993333;
+}
+
+/* =================================================================
+SERVICES STYLES
+==================================================================*/
+
+.service {
+    background-color: #993333;
+    color: #fff;
+    margin: 0 0 10px 0;
+    width: 100%;
+    height: 140px;
+    position: relative;
+    font: 16px bold Tahoma, Arial, san-serif;
+    text-align: left;
+}
+
+.service h4 {
+    margin: 0 0 0 10px;
+}
+
+.bottom-span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.servicedesc {
+    margin: 0 0 20px 0;
+    width: auto;
+    min-height: 200px;
+    font: 12px Tahoma, Arial, san-serif;
+}
+
+/*====================================================================
+SYSTEMS STYLES
+=====================================================================*/
 .syscontainer {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -256,120 +336,9 @@ System Boxes
     list-style-type: none;
 }
 
-/* ============== Descriptions Box ================*/
-
-.description {
-    width: 25%;
-    margin: 0 0 20px 3px;
-    padding: 0 0 0 0;
-    font-family: Tahoma,Arial,san-serif;
-    
-}
-
-/* =======================================================
-business solutions css
-========================================================*/
-
-.business-container{
-    min-height: 470px;
-    padding: 0 0 10px 0;
-    margin: 0 20px;
-    list-style: none;
-}
-
-.business-container a:hover, a:focus {
-    color: #993333;
-}
-
-/* ============= Information Div ================ */
-
-.infocontainer {
-    display: none;
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    background-color: #fff;
-    position: relative;
-    top: -100px;
-    left: 50px;
-    z-index: 1000;
-    min-height: 100%;
-    width: 400px;
-    border: 2px solid #000;
-}
-
-
-/* ====================================================
-Services CSS
-=====================================================*/
-
-.service {
-    background-color: #993333;
-    color: #fff;
-    margin: 0 0 10px 0;
-    width: auto;
-    min-height: 140px;
-    position: relative;
-    font: 16px bold Tahoma, Arial, san-serif;
-    text-align: left;
-}
-
-.service h4 {
-    margin: 0 0 0 10px;
-}
-
-.bottom-span {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.servicedesc {
-    width: auto;
-    min-height: 400px;
-    font: 12px Tahoma, Arial, san-serif;
-}
-    
-/* =======================================================
-about section
-=========================================================*/
-
-.about-container {
-    min-height: 600px;
-}
-
-.about-top {
-    background: #993333 url("img/about-us.png") no-repeat left;
-    background-size: cover;
-    color: #fff;
-    padding: 10px 20px;
-    height: 250px;
-}
-.about-bottom {
-
-    padding: 20px 20px;
-    min-height: 350px;
-    text-align: left;
-}
-
-#about {
-    padding: 30px 0;
-    margin: 0 0;
-    line-height: 300%;
-}
-
-.bottomexpand {
-    font: 30px Helvetica, Tahoma, Arial, san-serif;
-    position: relative;
-    top: 195px;
-    letter-spacing: 4px;
-}
-
-
-
-
-/* =======================================================
-contact section
-========================================================*/
+/* ========================================================================
+CONTACT US STYLES
+==========================================================================*/
 
 .contact-container {
     min-height: 500px;
@@ -389,6 +358,33 @@ contact section
     width: 600px;
     height: 100px;
 }
+
+/* ============== Descriptions Box ================*/
+
+.description {
+    width: 25%;
+    margin: 0 0 20px 3px;
+    padding: 0 0 0 0;
+    font-family: Tahoma, Arial, san-serif;
+
+}
+
+/* ============= Information Div ================ */
+
+.infocontainer {
+    display: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    background-color: #fff;
+    position: relative;
+    top: -100px;
+    left: 50px;
+    z-index: 1000;
+    min-height: 100%;
+    width: 400px;
+    border: 2px solid #000;
+}
+
 
 
 /*========================================================
@@ -564,18 +560,20 @@ MEDIA QUERIES
 
 
     #left {
+        background-image: none;
+        border: 1px solid #000;
+        margin: 5px 0;
         padding: 15px 0;
-        border-right: none;
-        border-bottom: 6px solid #fff;
         min-height: 200px;
         width: 100%;
         text-align: center;
     }
 
     #right {
-        padding: 30px 0;
-        border-left: none;
-        border-top: 6px solid #fff;
+        background-image: none;
+        border: 1px solid #000;
+        margin: 5px 0;
+        padding: 10px 0;
         min-height: 200px;
         width: 100%;
         text-align: center;
@@ -583,10 +581,10 @@ MEDIA QUERIES
     #getestimate {
         padding: 15px 0;
         position: absolute;
-        background-color: #fff;
+        background-color: #883333;
         z-index: 9999;
         top: 55%;
-        left: 30%;
+        left: 32%;
         height: 50px;
         width: 150px;
         text-align: center;

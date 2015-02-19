@@ -1,8 +1,7 @@
 <?php get_header(); ?>
 		<!-- section -->
 			<!--==================== main content start =======================-->
-
-			<div class="container">
+			<div class="col-md-24">
 				<div class="col-md-12" id="left">
 					<h4 class="red">RESIDENTIAL SOLUTIONS</h4>
 
