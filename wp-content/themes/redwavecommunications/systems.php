@@ -8,8 +8,8 @@
 
     <div class="syscontainer col-md-24">
         <div class="description">
-            <h3 class="breadcrumbs"><?php the_title(); ?></h3>
-            <p class="breadcrumbs">We are partnered with leading technology manufacturers to customize the right solution.</p>
+            <h1 class="breadcrumbs"><?php the_title(); ?></h1>
+            <p class="headpad">We are partnered with leading technology manufacturers to customize the right solution.</p>
         </div><!--description div-->
 
         <?php

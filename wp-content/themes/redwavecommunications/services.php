@@ -35,7 +35,7 @@
             <div class="servicedesc"><!-- service description start -->
                 <p><?php echo types_render_field('service-description', array('output' => 'html')); ?></p><br />
 
-                <b>Services Provided:</b><br/>
+                <b class="red">Services Provided:</b><br/>
                 <ul>
                     <li>
                      <?php
@@ -47,39 +47,6 @@
         </div><!-- individual service end -->
 
         <?php $loopItr++; endwhile; endif; ?>
-
-
-<!--        <div class="col-md-12">-->
-<!--            <div class="service">-->
-<!--                <span class="bottom-span"><p><h4>Service & Maintanence</h4></p></span>-->
-<!--            </div><!--construction & installation-->
-<!--            <div class="servicedesc">-->
-<!--                <p>Red Wave Comm's service department maintains and-->
-<!--                    inspects some of the largest facilities in the State of California.-->
-<!--                    We can provide your business with recurring service for-->
-<!--                    all of your communications, data, fire and sprinkler alarm-->
-<!--                    testing, inspections, and monitoring needs.</p>-->
-<!---->
-<!--                <p>We offer the most experienced and efficient technicians-->
-<!--                    who have received training in all aspects of the installation-->
-<!--                    process. Our technicians are provided with the latest tools-->
-<!--                    and technology to improve the identification and repair of-->
-<!--                    nearly all types of communications and low voltage needs.</p><br />-->
-<!---->
-<!--                <b>Services Provided:</b><br/>-->
-<!--                <ul>-->
-<!--                    <li>Data, Phone and Fax Line Repair</li>-->
-<!--                    <li>Relocating and replacing existing equipment and lines</li>-->
-<!--                    <li>Diagnosis and Repair of fire panels, sound equipment,-->
-<!--                        cameras, A/V, data, access control systems, CCTV, automation-->
-<!--                        and more</li>-->
-<!--                    <li>System Network Integration</li>-->
-<!--                    <li>Fire Alarm Inspections with Reports</li>-->
-<!--                </ul><!--Service Include list-->
-<!--            </div><!--Service Descrtiption-->
-<!---->
-<!---->
-<!--        </div><!--Service and Maintanence-->
     </div> <!-- service container end -->
 
    <!--=================== services end =================================-->

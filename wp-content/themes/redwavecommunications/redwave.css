@@ -1,8 +1,16 @@
 /* ===================================================
 General
 =====================================================*/
+.headpad {
+    padding: 0 15px;
+}
+
 .breadcrumbs {
     padding: 0 15px;
+    color: #993333;
+    font-size: 90px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: lighter;
 }
 
 .bulletlist {
@@ -61,6 +69,10 @@ HOME PAGE CUSTOM STYLES
 navbar css
 =======================================================*/
 
+.navbar {
+    min-height: 44px;
+}
+
 .navbar-form {
     margin: 0 0;
     padding: 0 0;
@@ -74,12 +86,9 @@ navbar css
     color: #fff;
 }
 
-.navbar {
+.navbar-inverse {
     background-color: #666;
-    font-family: Tahoma, Arial, san-serif;
-    height: 44px;
 }
-
 
 .navbar ul li:hover:after{
     border-bottom: 5px solid #993333;
@@ -88,6 +97,14 @@ navbar css
     left: 0;
     position: absolute;
     width: 100%;
+}
+
+#navbar {
+    background: #666;
+    width: 100%;
+    z-index: 10;
+    min-height: 44px;
+
 }
 
 /* =======================================================
@@ -242,7 +259,7 @@ RESIDENTIAL AND BUSINESS STYLES
     color: #fff;
     background-color: #993333;
     opacity: .85;
-    z-index: 9999;
+    z-index: 3;
     top: 75%;
     left: 44%;
     height: 40px;
@@ -349,9 +366,13 @@ CONTACT US STYLES
     width: 1000px;
 }
 
+.contactadd {
+    padding: 0 0 20px 0;
+}
+
 #contact-info {
     height: auto;
-    border-right: 1px solid #000
+    margin: 0 30px 0 0;
 }
 
 #contact-form>textarea {
@@ -557,6 +578,10 @@ MEDIA QUERIES
 ==========================================================*/
 
 @media only screen and (max-width: 750px) {
+
+    #searchdiv {
+        display:none;
+    }
 
 
     #left {
