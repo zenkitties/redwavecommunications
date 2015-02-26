@@ -40,12 +40,13 @@
                     <p><?php echo types_render_field('system-description', array('output'=>'html')); ?></p>
                 </div><!--info section-->
                 <div class="col-md-10">
+                    <h5><strong>BRANDS</strong></h5>
                     <ul>
-                        <li>Egan Teamboard ></li>
-                        <li>Milestone AV ></li>
-                        <li>SP Control ></li>
-                        <li>Frontrow ></li>
-                        <li>Extron Electronics ></li>
+                        <li>
+                            <?php
+                            echo types_render_field('system-list', array('output' => 'html', 'separator' => '</li><li>'));
+                            ?>
+                        </li>
                     </ul>
                 </div> <!--list section-->
             </div> <!-- Info Container -->
