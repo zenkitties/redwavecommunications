@@ -1,17 +1,15 @@
 </div>
 <!--======================= Footer Start ==========================-->
-<div class="container col-md-24">
-<footer id="footer row">
-	<div class="container">
+<footer id="footer">
 		<div class="col-md-6">
 			<span>&copy;2015 REDWAVE COMMUNICATIONS</span>
 		</div>
-		<div class="col-md-5">
+	<div class="col-md-5">
+
 			<img src="<?php echo get_template_directory_uri() ?>/img/footer.png">
 		</div>
-	</div>
+	<div class="col-md-13"></div>
 </footer>
-	</div>
 <!--===================== Footer Close =====================-->
 		<!-- /wrapper -->
 
