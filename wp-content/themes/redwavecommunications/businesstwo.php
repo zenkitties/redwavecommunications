@@ -6,6 +6,7 @@
 <!--===================== New Business Accordion ==========================-->
 
     <!--=================== horizontal accordion start ================-->
+    <!--
     <div class="accordion horizontal">
 
         <section id="business">
@@ -76,6 +77,10 @@
         </section>
     </div>
     <!--======================== Horizontal Div End =======================-->
+
+    <!-- new accordion attempt -->
+
+    <?php do_shortcode("[accordion_pro id='127']"); ?>
 
 <?php get_footer(); ?>
 

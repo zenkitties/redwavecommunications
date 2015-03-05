@@ -6,7 +6,7 @@
     <h3 class="breadcrumbs"><?php the_title(); ?></h3>
 
 <!--==================== Accordian Begins ======================-->
-
+<!--
 <div class="business-container col-md-24">
     <div class="panel-group" id="accordion">
         <div class="panel panel-default">
@@ -109,7 +109,11 @@
             </div>
         </div>
     </div>
+-->
 
+<! -- New accordion attempt -->
+
+    <?php echo do_shortcode("[accordion_pro id='122']"); ?>
 </main>
 
 <?php get_footer(); ?>

@@ -1,6 +1,10 @@
 /* ===================================================
 General
 =====================================================*/
+.row {
+    margin: 0 0;
+}
+
 .headpad {
     padding: 0 15px;
 }
@@ -14,7 +18,7 @@ General
 }
 
 .bulletlist {
-    margin: 0 0 0 50px;
+    margin: 0 0 0 30px;
     list-style: disc;
 }
 
@@ -194,10 +198,14 @@ ABOUT US STYLES
     height: 250px;
 }
 .about-bottom {
-
-    padding: 20px 20px;
+    margin: 0 10px 0 0;
+    padding: 20px 30px;
     min-height: 350px;
     text-align: left;
+}
+
+#cert {
+    padding:0 20px;
 }
 
 #about {
@@ -282,6 +290,10 @@ RESIDENTIAL AND BUSINESS STYLES
 SERVICES STYLES
 ==================================================================*/
 
+#service {
+    margin: 0 10%;
+}
+
 .service {
     background-color: #cc3333;
     color: #fff;
@@ -316,13 +328,12 @@ SYSTEMS STYLES
 .syscontainer {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
-    min-height: 825px;
+    min-height: 425px;
 }
 
 .products {
-     margin: 5px 0 25px 50px;
+     margin: 5px 0 25px 30px;
      padding: 0 0 0 0;
-     width: 175px;
      height: 140px;
      float: left;
      background: #ccc;
@@ -400,7 +411,7 @@ CONTACT US STYLES
     margin: 0 0 0 0;
     padding: 10px;
     font: 12px Helvetica, Arial, sans-serif;
-    background-color: #fff;
+    background-color: rgba(255,255,255, .80);
     position: relative;
     bottom: 0px;
     left: -25%;
@@ -644,7 +655,8 @@ MEDIA QUERIES
         padding: 0 0 5px 20px;
         width: 50%;
     }
-    .navbar-collapse>a {
+    #navbar a {
+        display: block;
         width: 100%;
         text-align: center;
     }
@@ -668,13 +680,56 @@ MEDIA QUERIES
         display: none;
         /*margin: 0 0 0 0;
         padding: 0 0 0 0;*/
-        background-color: #fff;
+        background-color: rgba(255,255,255, .85);
         position: relative;
-        top: -100px;
-        left: -25px;
+        bottom: 0px;
+        left: 25px;
         z-index: 1000;
         min-height: 100%;
-        width: 125%;
+        width: 90%;
         border: 2px solid #000;
     }
+
+    .products {
+        margin: 0 0 20px 0;
+    }
+}
+
+
+
+/* ==================================================
+ACCORDION CODE
+===================================================*/
+
+.topimage {
+    height: 250px;
+    width: 100%;
+    background: #ccc;
+    background-size: cover;
+    border: 1px solid #000;
+}
+
+.accordDesc {
+    font: 14px Helvetica, Arial, san-serif;
+    height: 100%;
+    margin: 50px 0 0 50px;
+}
+
+.servList {
+    list-style: none;
+    font: 14px Helvetica, Arial, san-serif;
+    margin: 50px 0 0 10px;
+}
+
+.servList li {
+    margin: 5px 0 0 15px;
+    font: 14px Helvetica, Arial, san-serif;
+}
+
+.red {
+    color: #cc3333;
+}
+
+.listMargin {
+    margin: 0 0 0 25px;
 }

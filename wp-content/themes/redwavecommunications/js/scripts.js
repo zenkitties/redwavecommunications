@@ -16,6 +16,10 @@ jQuery(document).ready(function(){
 	$('.products').hover(function () {
 		$(this).find('.infocontainer').toggle();
 	});
+
+	$('.products').onClick(function () {
+		$(this).find('.infocontainer').toggle();
+	});
 });
 
 

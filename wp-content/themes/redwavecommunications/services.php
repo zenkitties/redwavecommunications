@@ -15,7 +15,7 @@
                 'post_status'      => 'publish',
                 'order'            => 'ASC',
                 'orderby'          => 'date',
-                'posts_per_page'   => 4
+                'posts_per_page'   => 3
             );
             $loop = new WP_Query($args);
             $loopItr = 0;
@@ -25,11 +25,11 @@
         <?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 200,150 ), false, '' );?>
 
                 <?php
-                    $colWidth = $loopItr <=2 ? '4' : '12';
+                    $colWidth = $loopItr <=1 ? '7' : '10';
                 ?>
-
+    <div id="service">
         <div class="col-md-<?php echo $colWidth; ?> pad"><!-- individual service begin -->
-            <div class="service" style="background:url('<?php echo $src[0]; ?>') center no-repeat; background-size: cover;"><!-- service name and photo begin -->
+            <div class="service" style="background:url('<?php echo $src[0]; ?>')no-repeat center; background-size: cover;"><!-- service name and photo begin -->
                 <span class="bottom-span"><p><h4><?php echo types_render_field('service-name', array('output' => 'html')); ?></h4></p></span>
             </div><!-- photo and service-name end -->
             <div class="servicedesc"><!-- service description start -->
@@ -45,7 +45,7 @@
                 </ul>
             </div><!-- service-description end -->
         </div><!-- individual service end -->
-
+    </div> <!-- container -->
         <?php $loopItr++; endwhile; endif; ?>
     </div> <!-- service container end -->
 

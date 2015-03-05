@@ -49,14 +49,14 @@
 				<nav class="navbar navbar-fixed-top navbar-inverse pull-right">
 					<div class="col-md-24">
 						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<button type="button" class="navbar-toggle collapsed col-sm-24 col-col-xs-24" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
 						</div>
-						<div class="collapse navbar-collapse" id="navbar">
+						<div class="collapse navbar-collapse col-sm-24 col-xs-24" id="navbar">
 						<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-search')) ?>
 						<?php redwave_nav(); ?>
 							</div>

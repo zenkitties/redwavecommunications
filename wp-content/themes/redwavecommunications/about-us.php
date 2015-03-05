@@ -2,6 +2,19 @@
 
     <main role="main">
         <h3 class="breadcrumbs"><?php the_title(); ?></h3>
+
+        <?php
+            $args = array(
+            'post_type'        => 'about-section',
+            'post_status'      => 'publish',
+            'order'            => 'ASC',
+            'orderby'          => 'date',
+            'posts_per_page'   => 1
+            );
+                $loop = new WP_Query($args);
+                $loopItr = 0;
+                if ($loop->have_posts()): while($loop->have_posts()): $loop->the_post();
+        ?>
         <!--==================== about section start ======================-->
         <div class="about-countainer">
             <div class="col-md-24 about-top">
@@ -15,21 +28,8 @@
                 </div>
             </div><!--about image with description-->
             <div class="col-md-24 about-bottom">
-                <div class="col-md-14">
-                    <p>Red Wave Comm, Inc (RWC CALIFORNIA) was formed in 2002, and has
-                        grown to be a leading low voltage contractor throughout California. With
-                        our partners’ combined experience of over 30 years, we have the expertise
-                        to meet and exceed your low voltage system requirements.</p>
-
-                    <p>We are licensed by the California Contractors State License Board with A, B, C-7 and C-10
-                        classifications. We are proud to report that we are a State of California
-                        DVBE & SBE organization, certified by the Department of General Services.
-                        We can offer the following services to your organization:</p>
-                    <ul class="bulletlist">
-                        <li>Design and installation of low voltage systems</li>
-                        <li>Bonding capacity for large projects</li>
-                        <li>AUTOCAD design including the ability to perform 3D rendering</li>
-                    </ul>
+                <div id="cert" class="col-md-14">
+                    <?php echo types_render_field('about-us-content', array('output' => 'HTML')); ?>
                 </div>
                 <div class="col-md-10">
                     <p><b><span class="red">CERTIFICATIONS</span></b></p>
@@ -51,7 +51,7 @@
             </div>
 
             <!--==============about us section========================-->
-
+        <?php $loopItr++; endwhile; endif; ?>
     </main>
 
 <?php get_footer(); ?>
