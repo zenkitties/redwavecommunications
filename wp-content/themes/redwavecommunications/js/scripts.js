@@ -13,12 +13,12 @@
 
 jQuery(document).ready(function(){
 
-	$('.products').hover(function () {
-		$(this).find('.infocontainer').toggle();
+	jQuery('.products').hover(function () {
+		jQuery(this).find('.infocontainer').toggle();
 	});
 
-	$('.products').onClick(function () {
-		$(this).find('.infocontainer').toggle();
+	jQuery('.products').click(function () {
+		jQuery(this).find('.infocontainer').toggle();
 	});
 });
 

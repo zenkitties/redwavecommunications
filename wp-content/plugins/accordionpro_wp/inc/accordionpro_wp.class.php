@@ -516,7 +516,7 @@ class accordion_pro {
       array_push($this->css_ids, $atts['id']);
 
       // return accordion
-      return do_shortcode($accordion['post_content']);
+      echo do_shortcode($accordion['post_content']);
     } else {
       return '';
     }
