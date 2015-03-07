@@ -172,7 +172,7 @@
 .accordionPro.vertical.rtl .slide > h2 b { right: auto !important; left: 5% !important; text-align: left !important }
 
 /* basic */
-.accordionPro.vertical.basic .slide > h2 { line-height: 285% }
+.accordionPro.vertical.basic .slide > h2 { line-height: 285% background: #ccc; color: #000; }
 
 /* light & dark */
 .accordionPro.vertical.dark, .accordionPro.vertical.light { padding: 5px; padding-bottom: 0 }
@@ -195,8 +195,8 @@
 
 /***************************************** THEMES */
 /****************************************** Basic */
-.accordionPro.basic .slide { background: #333 }
-.accordionPro.basic .slide > h2 { background: #333; color: white; line-height: 225% }
+.accordionPro.basic .slide { background: #ccc }
+.accordionPro.basic .slide > h2 { background: #cc3333; color: black; line-height: 225% }
 
 /****************************************** Dark */
 .accordionPro.dark {

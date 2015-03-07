@@ -749,3 +749,8 @@ accordion inner div
     height: 400px;
 }
 
+.basic .slide>h2 {
+    background: #ccc;
+    color: #000;
+
+}

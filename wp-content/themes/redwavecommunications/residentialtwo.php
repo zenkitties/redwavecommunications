@@ -5,8 +5,10 @@
 
     <!--===================== New Business Accordion ==========================-->
 
+    <?php echo do_shortcode("[accordion_pro id='162']"); ?>
+
     <!--=================== horizontal accordion start ================-->
-    <div class="accordion horizontal">
+    <!--<div class="accordion horizontal">
 
         <section id="residential">
             <div class="col-md-24">
