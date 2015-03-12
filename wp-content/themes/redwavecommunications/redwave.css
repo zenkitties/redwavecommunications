@@ -18,7 +18,8 @@ General
 }
 
 .bulletlist {
-    margin: 0 0 0 30px;
+    margin: 0 0 0 20px;
+    padding: 0 0 0 0;
     list-style: disc;
 }
 
@@ -69,6 +70,10 @@ a:hover, a:focus {
 HOME PAGE CUSTOM STYLES
 =======================================================================*/
 
+.buspad {
+    padding-left: 0px;
+}
+
 /* ======================================================
 navbar css
 =======================================================*/
@@ -105,10 +110,16 @@ navbar css
 
 #navbar {
     background: #666;
+    border: none;
     width: 100%;
     z-index: 10;
     min-height: 44px;
 
+}
+
+#navbar a {
+    height: 40px;
+    margin: 2px 0 0 0;
 }
 
 /* =======================================================
@@ -192,10 +203,10 @@ ABOUT US STYLES
 
 .about-top {
     background: #cc3333 url("img/about-us.png") no-repeat left;
-    background-size: cover;
+    background-size: 100% 100%;
     color: #fff;
     padding: 10px 20px;
-    height: 250px;
+    height: 319px;
 }
 .about-bottom {
     margin: 0 10px 0 0;
@@ -235,7 +246,7 @@ RESIDENTIAL AND BUSINESS STYLES
     background: #fff url("img/left-side-front.png") no-repeat right;
     background-size: cover;
     margin: 0 0;
-    padding: 20px 20px 0 0;
+    padding: 10px 20px 0 0;
     border-right: 12px solid #fff;
     min-height: 419px;
     text-align: right;
@@ -243,6 +254,7 @@ RESIDENTIAL AND BUSINESS STYLES
 
 #left li {
     font: 16px Helvetica,Arial,san-serif;
+    margin-bottom: 15px;
     padding: 5px 0 0 0;
 }
 
@@ -250,7 +262,7 @@ RESIDENTIAL AND BUSINESS STYLES
     background: #fff url("img/right-side-front.png") no-repeat left;
     background-size: cover;
     margin: 0 0;
-    padding: 20px 0 0 10px;
+    padding: 10px 0 0 20px;
     border-left: 12px solid #fff;
     min-height: 419px;
     text-align: left;
@@ -266,10 +278,10 @@ RESIDENTIAL AND BUSINESS STYLES
     position: absolute;
     color: #fff;
     background-color: #cc3333;
-    opacity: .85;
+    opacity: .90;
     z-index: 3;
     top: 75%;
-    left: 44%;
+    left: 45%;
     height: 40px;
     width: 150px;
     text-align: center;
@@ -294,7 +306,7 @@ BUSINESS AND RESIDENTIAL ACCORDION STYLES
 
 .content {
     font: 16px Helvetica, Arial, sans-serif;
-    margin: 25px 0 0 10px !important;
+    margin: 10px 0 0 40px !important;
     padding: 0 25px 0 0 !important;
 }
 
@@ -346,21 +358,14 @@ SERVICES STYLES
 /*====================================================================
 SYSTEMS STYLES
 =====================================================================*/
-.syscontainer {
-    margin: 0 0 0 0;
+.grid-system {
+    position: relative;
+    height: 140px;
+    margin: 0 0 0 20px;
     padding: 0 0 0 0;
-    min-height: 425px;
+    background: #fff;
+    font: 14px "Helvetica Neue";
 }
-
-.products {
-     margin: 5px 0 25px 30px;
-     padding: 0 0 0 0;
-     height: 140px;
-     float: left;
-     background: #ccc;
-     font: 14px Helvetica, Arial, san-serif;
-     text-align: left;
- }
 
 .image {
     width: auto;
@@ -369,23 +374,31 @@ SYSTEMS STYLES
 }
 
 .imgdesc {
-    padding: 4px;
     height: 25%;
     color: #fff;
     background-color: #cc3333;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue";
+    padding: 10px 0 0 5px;
 }
 
-.products p {
+.grid-header {
+    background-color:#fff;
+    margin-left: -25px;
+    margin-top: 15px;
+}
+
+.grid-system p {
     margin: 0 0 10px 10px;
     vertical-align: text-bottom;
 }
 
-.products .info p, .products .info ul {
+.grid-system .info p, ul {
     font-size: 12px;
-    margin: 5px 0;
-    padding: 0 0 0 0;
-    /*list-style-type: none;*/
+    list-style-type: none;
+}
+
+.row {
+    margin-bottom: 25px;
 }
 
 /* ========================================================================
@@ -432,12 +445,9 @@ CONTACT US STYLES
     margin: 0 0 0 0;
     padding: 10px;
     font: 12px Helvetica, Arial, sans-serif;
-    background-color: rgba(255,255,255, .80);
-    position: relative;
-    bottom: 0px;
-    left: -25%;
+    background-color: rgba(255,255,255, .90);
+    position: absolute;
     z-index: 1000;
-    min-height: 100%;
     width: 400px;
     border: 2px solid #000;
 }
@@ -445,6 +455,11 @@ CONTACT US STYLES
 .infolist {
     margin: 0 0 0 0;
     list-style: disc;
+}
+
+.sys-desc {
+    margin: 0 0 0 0;
+    padding: 0 10px 0 0;
 }
 
 #tool-tip {
@@ -460,9 +475,8 @@ MEDIA QUERIES
 @media only screen and (max-width: 750px) {
 
     #searchdiv {
-        display:none;
+        display: none;
     }
-
 
     #left {
         background-image: none;
@@ -483,6 +497,7 @@ MEDIA QUERIES
         width: 100%;
         text-align: center;
     }
+
     #getestimate {
         padding: 15px 0;
         position: absolute;
@@ -494,6 +509,7 @@ MEDIA QUERIES
         width: 150px;
         text-align: center;
     }
+
     #footer {
         height: 100px;
         width: 100%;
@@ -507,250 +523,16 @@ MEDIA QUERIES
         margin: 30px 0 0 0;
         padding: 0 0 0 0;
     }
-    
+
     .navbar-form {
         padding: 0 0 5px 20px;
         width: 50%;
     }
+
     #navbar a {
         display: block;
         width: 100%;
         text-align: center;
     }
-
-    /*=========================== systems media queries ======================
-    ========================================================================*/
-
-    .description {
-        width: 100%;
-        margin: 0 0 20px 3px;
-        padding: 0 0 0 0;
-        font-family: Tahoma,Arial,san-serif;
-
-    }
-
-    #tagline {
-        display:none;
-    }
-
-    .infocontainer {
-        display: none;
-        /*margin: 0 0 0 0;
-        padding: 0 0 0 0;*/
-        background-color: rgba(255,255,255, .85);
-        position: relative;
-        bottom: 0px;
-        left: 25px;
-        z-index: 1000;
-        min-height: 100%;
-        width: 90%;
-        border: 2px solid #000;
-    }
-
-    .products {
-        margin: 0 0 20px 0;
-    }
-}
-
-
-
-/* ==================================================
-ACCORDION CODE
-===================================================*/
-
-.topimage {
-    height: 250px;
-    width: 100%;
-    background: #ccc;
-    background-size: cover;
-    border: 1px solid #000;
-}
-
-.accordDesc {
-    font: 14px Helvetica, Arial, san-serif;
-    height: 100%;
-    margin: 50px 0 0 50px;
-}
-
-.servList {
-    list-style: none;
-    font: 14px Helvetica, Arial, san-serif;
-    margin: 50px 0 0 10px;
-}
-
-.servList li {
-    margin: 5px 0 0 15px;
-    font: 14px Helvetica, Arial, san-serif;
-}
-
-.red {
-    color: #cc3333;
-}
-
-.listMargin {
-    margin: 0 0 0 25px !Important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==================================================
-Accordion Example
-====================================================*/
-.accordion {
-    width:100%;
-    overflow:hidden;
-    margin:2px auto;
-    color:#474747;
-    height: auto;
-    background:#fff;
-    padding: 3px;
-}
-
-.accordion section{
-    float:left;
-    overflow:hidden;
-    color:#333;
-    cursor:default;
-    background: #883333;
-    margin:3px;
-}
-.accordion section:hover {
-    background:#444;
-}
-
-.accordion section p {
-    display:none;
-}
-
-.accordion section:after{
-    position:relative;
-    font-size:32px;
-    color:#000;
-    font-weight:bold;
-    vertical-align: text-bottom;
-}
-
-.accordion section:nth-child(1):after{ content:''; }
-.accordion section:nth-child(2):after{ content:''; }
-.accordion section:nth-child(3):after{ content:''; }
-.accordion section:nth-child(4):after{ content:''; }
-.accordion section:nth-child(5):after{ content:''; }
-
-section .accordtop, .accordbottom {
-    display: none;
-}
-
-section:target .accordtop, section:target .accordbottom {
-    display: block;
-}
-
-.accordion section:target {
-    background:#FFF;
-    padding:5px;
-}
-.accordion section:target:hover {
-    background:#FFF;
-}
-.accordion section:target h2 {
-    width:100%;
-}
-.accordion section:target h2 a{
-    color:#333;
-    padding:0;
-}
-.accordion section:target p {
-    display:block;
-}
-.accordion section h2 a{
-    padding:2px 10px;
-    display:block;
-    font-size:22px;
-    font-weight:normal;
-    color:#eee;
-    text-decoration:none;
-}
-
-.horizontal section{
-    width:5%;
-    min-height:700px;
-    -moz-transition: width 0.5s ease-out;
-    -webkit-transition:width 0.5s ease-out;
-    -o-transition:width 0.5s ease-out;
-    transition:width 0.5s ease-out;
-}
-
-/*Position the number of the slide*/
-.horizontal section:after{
-    top:140px;
-    left:15px;
-}
-
-/*Header of closed slide*/
-.horizontal section h2 {
-    -webkit-transform:rotate(90deg);
-    -moz-transform:rotate(90deg);
-    -o-transform: rotate(90deg);
-    transform: rotate(90deg);
-    width:240px;
-    position:relative;
-    left:-100px;
-    top:85px;
-}
-/*On mouse over open slide*/
-.horizontal :target{
-    width:73%;
-    height:230px;
-}
-.horizontal :target h2{
-    top:0px;
-    left:0;
-    -webkit-transform:rotate(0deg);
-    -moz-transform:rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-}
-
-/*====================================================
-accordion inner div
-====================================================*/
-
-.accordtop {
-    background: #883333 url('img/business-solutions.png') no-repeat;
-    background-size:cover;
-    color: #fff;
-    min-height: 317px;
-    font-size: 48px;
-    position: relative;
-    bottom: 0px;
-    left: 10px;
-}
-
-.accordbottom {
-    height: 400px;
-}
-
-.basic .slide>h2 {
-    background: #ccc;
-    color: #000;
 
 }

@@ -373,7 +373,6 @@ add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditi
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -476,5 +475,36 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+/* All Residential Homepage Links */
+
+function rw_homepage_residential_links() {
+    $args = array(
+        'post_type' => 'rw-home-page',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'link-type',
+                'field'    => 'slug',
+                'terms'    => 'residential',
+            )
+        )
+    );
+    return new WP_Query( $args );
+}
+
+function rw_homepage_business_links() {
+    $args = array(
+        'post_type' => 'rw-home-page',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'link-type',
+                'field'    => 'slug',
+                'terms'    => 'business',
+            )
+        )
+    );
+    return new WP_Query( $args );
+}
+
 
 ?>

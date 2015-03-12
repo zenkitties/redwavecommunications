@@ -1,46 +1,37 @@
 <?php get_header(); ?>
 		<!-- section -->
-
-		<?php
-			$args = array(
-			'post_type'        => 'rw-home-page',
-			'post_status'      => 'publish',
-			'order'            => 'ASC',
-			'orderby'          => 'title',
-			'posts_per_page'   => 1
-			);
-			$loop = new WP_Query($args);
-			$loopItr = 0;
-			if ($loop->have_posts()): while($loop->have_posts()): $loop->the_post(); ?>
+		<?php $query = rw_homepage_residential_links(); ?>
 
 			<!--==================== main content start =======================-->
 
 			<div class="col-md-24">
 				<div class="col-md-12" id="left">
-					<h4 class="red"><?php echo the_title(); ?></h4>
+					<h4 class="red"><strong>RESIDENTIAL<br />SOLUTIONS</strong></h4>
 
 
 					<ul>
-						<li><?php echo types_render_field('rw-page-links', array('output' => 'html', 'separator' => '</li><li>')); ?></li>
+						<?php if ($query->have_posts()): while($query->have_posts()): $query->the_post(); ?>
+						<li><?php the_title(); ?> ></li>
+						<? endwhile; endif; ?>
 					</ul>
 				</div><!-- left side column -->
 
-
+		<?php $query = rw_homepage_business_links(); ?>
 				<div class="col-md-12" id="right">
-					<h4 class="red"><?php echo the_title(); ?></h4>
+					<h4 class="red"><strong>BUSINESS<br /> SOLUTIONS</strong></h4>
 
-					<ul>
-						<li><?php echo types_render_field('rw-page-links', array('output' => 'html', 'separator' => '</li><li>')); ?></li>
-
+					<ul class="buspad">
+						<?php if ($query->have_posts()): while($query->have_posts()): $query->the_post(); ?>
+						<li><?php the_title(); ?> ></li>
+						<? endwhile; endif; ?>
 					</ul>
 				</div><!-- right side column -->
 			</div>
 			<div id="getestimate">
-				<p>Get an Estimate.</p>
+				<p>Get an Estimate</p>
 			</div>
 			<!--=================main content end ==========================-->
 		<!-- /section -->
-				<?php $loopItr++; endwhile; endif; ?>
 
 
 <?php get_footer(); ?>

@@ -80,7 +80,7 @@
 
     <!-- new accordion attempt -->
 
-    <?php do_shortcode("[accordion_pro id='127']"); ?>
+    <?php echo do_shortcode("[accordion_pro id='176']"); ?>
 
 <?php get_footer(); ?>
 
