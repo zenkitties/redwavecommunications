@@ -63,7 +63,7 @@ if (function_exists('add_theme_support'))
 	Functions
 \*------------------------------------*/
 
-// HTML5 Blank navigation
+// Red wave navigation
 function redwave_nav()
 {
 	wp_nav_menu(
@@ -79,6 +79,21 @@ function redwave_nav()
     ));
 }
 
+//Home Page Residential Custom Post loop
+//function getResidentialHPLinks() {
+//    $args = array(
+//        'post_type' => 'rw-home-page',
+//        'post_status' => 'publish',
+//        'order' => 'ASC',
+//        'orderby' => 'title',
+//        'posts_per_page' => -1
+//    );
+//    $loop = new WP_Query($args);
+//    $loopItr = 0;
+//    if ($loop->have_posts()): while ($loop->have_posts()): $loop->the_post()
+//};
+
+
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()
 {
@@ -92,7 +107,10 @@ function html5blank_header_scripts()
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
 
-        wp_register_script('jQuery', get_template_directory_uri() . '/scripts/jquery/jquery-1.11.2.js', array(), '1.11.2', true); //jQuery
+        wp_register_script('jQueryUI', get_template_directory_uri() . '/scripts/jqueryui/jquery-ui.min.js', array('jqueryui'), '1.11.3', true); //jQuery UI
+        wp_enqueue_script('jQueryUI'); // Enqueue it!
+
+        wp_register_script('jQuery', get_template_directory_uri() . '/scripts/jquery/jquery-2.1.3.js', array(), '2.1.3'); //jQuery
         wp_enqueue_script('jQuery'); //Enqueue it!
 
         wp_register_script('bootstrapsjs', get_template_directory_uri() . '/scripts/bootstraps/js/bootstrap.min.js', array(), '3.3.2', true); //Bootstraps
@@ -355,7 +373,6 @@ add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditi
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -458,5 +475,36 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+/* All Residential Homepage Links */
+
+function rw_homepage_residential_links() {
+    $args = array(
+        'post_type' => 'rw-home-page',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'link-type',
+                'field'    => 'slug',
+                'terms'    => 'residential',
+            )
+        )
+    );
+    return new WP_Query( $args );
+}
+
+function rw_homepage_business_links() {
+    $args = array(
+        'post_type' => 'rw-home-page',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'link-type',
+                'field'    => 'slug',
+                'terms'    => 'business',
+            )
+        )
+    );
+    return new WP_Query( $args );
+}
+
 
 ?>

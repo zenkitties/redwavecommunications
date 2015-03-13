@@ -1,0 +1,80 @@
+/*============= bullets and such ==============*/
+
+.noBullets {
+  list-style-type: none;
+}
+
+/*============= get an estimate ===============*/
+
+#accordionPro175 div .estimate, #accordionPro176 div .estimate {
+  background: #a71f35;
+  color: #fff;
+  width: 200px;
+  margin-left: 40px;
+  padding: 8px 0;
+  text-align: center;
+}
+
+.estimate a {
+  color: #fff;
+
+}
+
+#accordionPro175.basic .slide>h2, #accordionPro176.basic .slide>h2 {
+  background: #ccc;
+  color: #323232;
+}
+
+#accordionPro175.basic .selected>h2, #accordionPro176.basic .selected>h2  {
+  background: #c21a24;
+  color: #fff;
+}
+
+#accordionPro175.basic ul li, #accordionPro176.basic ul li {
+  margin: 2px 0 0 10px;
+}
+
+/* ============ accordion inside of an accordion ================== */
+
+ul {
+  list-style-type: none;
+}
+
+.submenu {
+  display: none;
+  margin-left: 0;
+  padding-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.menuItem.active .submenu {
+  display: block;
+}
+
+.menuItem {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.menuItem::before {
+  content: "+";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.menuItem.active::before {
+  content: "-";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.submenu li::before {
+  content: '-';
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.menuItem.noSubmenu {
+  cursor: auto;
+}

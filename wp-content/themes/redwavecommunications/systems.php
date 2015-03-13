@@ -1,127 +1,73 @@
 <?php /* Template Name: Systmes Template */ get_header(); ?>
 
-<main role="main">
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-offset-4 col-md-4 col-sm-24 col-xs-24">
+            <div class="grid-system">
+                <img class="grid-header" src="http://localhost:8080/wp-content/uploads/2015/02/systems2.png">
+                <p class="headpad">
+                    We partner with leading
+                    technology manufacturers to
+                    customize the right solution
+                    or residential or business
+                    projects.</p>
+            </div><!-- close .grid-system -->
+        </div>
 
-    <!--===================== Systems Section Begin ==================-->
-    <div class="syscontainer col-md-24">
-        <div class="description">
-            <h3 class="breadcrumbs"><?php the_title(); ?></h3>
-            <p class="breadcrumbs">We are partnered with leading technology manufacturers to customize the right solution.</p>
-        </div><!--description div-->
+        <?php
+        $args = array(
+            'post_type'        => 'rw-system',
+            'post_status'      => 'publish',
+            'order'            => 'ASC',
+            'orderby'          => 'title',
+            'posts_per_page'   => -1
+        );
+        $loop = new WP_Query($args);
+        $cols = 2;
+        if ($loop->have_posts()): while($loop->have_posts()): $loop->the_post();
+        ?>
 
-        <div class="products">
-            <div class="imgdesc">
-                <p>Access Control</p>
-            </div>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
-        </div><!--products div-->
+        <?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 200,150 ), false, '' );?>
 
-        <div class="products">
-            <p>Audio/Video</p>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
-        </div><!--products div-->
+        <div class="<?php echo ($cols == 1) ? 'col-md-offset-4' : '' ?> col-md-4 col-sm-24 col-xs-24">
+            <div class="grid-system">
+                <div class="image" style="background:url('<?php echo $src[0]; ?>'); background-size: 196px 156px;"></div>
 
-        <div class="products">
-            <p>CATV</p>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
-        </div><!--products div-->
+                <div class="infocontainer infolist">
+                    <img id="tool-tip" src="<?php echo get_template_directory_uri() ?>/img/tool-tip.png" />
+                    <div class="sys-desc col-md-14">
+                        <p><?php echo types_render_field('system-description', array('output'=>'html')); ?></p>
+                    </div><!-- close .col-md-14 -->
+                    <div class="col-md-10">
+                        <h5><strong>BRANDS</strong></h5>
+                        <ul class="bulletlist">
+                            <li>
+                                <?php
+                                echo types_render_field('system-list', array('output' => 'html', 'separator' => '</li><li>'));
+                                ?>
+                            </li>
+                        </ul>
+                    </div> <!-- close .col-md-10 -->
+                </div> <!-- close info container -->
+            </div><!-- close grid-system-->
+        </div><!-- close .col-md-offset-2 -->
 
-        <div class="products">
-            <p>CCTV</p>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
-        </div><!--products div-->
+        <?php if ($cols === 4): ?>
 
-        <div class="products">
-            <p>Fire Alarm</p>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
-        </div><!--products div-->
+        <!-- close the current row -->
+    </div>
 
-        <div class="products">
-            <p>Automation</p>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
+    <!-- open a new row -->
+    <div class="row">
+        <?php $cols=0; endif; ?>
+        <?php $cols++; endwhile; endif; ?>
+        <!-- finally close the current row -->
+    </div>
 
-        </div><!--products div-->
-
-        <div class="products">
-            <p>Master Clock Systems</p>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
-        </div><!--products div-->
-
-        <div class="products">
-            <p>Nurse Call</p>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
-        </div><!--products div-->
-
-        <div class="products">
-            <p>PA Systems</p>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
-        </div><!--products div-->
-
-        <div class="products">
-            <p>Phone Systems</p>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
-        </div><!--products div-->
-
-        <div class="products">
-            <p>Security Systems</p>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
-        </div><!--products div-->
-
-        <div class="products">
-            <p>Sound</p>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
-        </div><!--products div-->
-
-        <!--=================== Systems Section End ======================-->
-
-        <div class="products">
-            <p>Structured Cabling</p>
-            <div class="image">
-                <p>Image Goes Here</p>
-            </div><!--Images inside products-->
-            <div class="infocontainer info">
-                <div class="col-md-14">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div><!--info section-->
-                <div class="col-md-10">
-                    <ul>
-                        <li>Egan Teamboard ></li>
-                        <li>Milestone AV ></li>
-                        <li>SP Control ></li>
-                        <li>Frontrow ></li>
-                        <li>Extron Electronics ></li>
-                    </ul>
-                </div> <!--list section-->
-            </div> <!-- Info Container -->
-        </div><!--products div-->
-
-  <!--=================================== systems endings ==================================-->
-
-</main>
-
-<?php get_footer(); ?>
+    <div class="row">
+        <div class="col-md-24">
+            <?php get_footer(); ?>
+        </div>
+    </div>
+</div><!-- close the beginning containers  -->
