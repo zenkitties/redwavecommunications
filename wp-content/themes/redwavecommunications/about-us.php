@@ -4,11 +4,8 @@
 
         <?php
             $args = array(
-            'post_type'        => 'about-us',
+            'pagename'        => 'about-us',
             'post_status'      => 'publish',
-            'order'            => 'ASC',
-            'orderby'          => 'date',
-            'posts_per_page'   => 1
             );
                 $loop = new WP_Query($args);
                 if ($loop->have_posts()): while($loop->have_posts()): $loop->the_post();
@@ -23,10 +20,10 @@
             </div><!--about image with description-->
             <div class="col-md-24 about-bottom">
                 <div id="cert" class="col-md-14">
-                    <?php echo get_content(); ?>
+                    <?php echo the_content(); ?>
                 </div>
-                <div class="col-md-10">
-                    <p><b><span class="red">CERTIFICATIONS</span></b></p>
+                <div id="cert" class="col-md-10">
+                    <h4><strong><span class="red">CERTIFICATIONS</span></strong></h4>
                     <?php echo types_render_field('about-certifications', array('output' => 'HTML'));  ?>
 
                 </div>

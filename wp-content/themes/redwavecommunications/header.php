@@ -38,7 +38,7 @@
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
 							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img">
 						</a>
-						<i><span id="tagline"><?php bloginfo('description'); ?></span><br /></i>
+						<span id="tagline"><?php bloginfo('description'); ?></span><br />
 					</div>
 
 
@@ -46,7 +46,7 @@
 
 					<!-- nav -->
 				<!--===================== Navbar coding ============================-->
-				<nav class="navbar navbar-fixed-top navbar-inverse pull-right">
+				<nav class="navbar navbar-fixed-top pull-right">
 					<div class="col-md-24">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle collapsed col-sm-24 col-col-xs-24" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">

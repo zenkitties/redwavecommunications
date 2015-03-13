@@ -7,7 +7,7 @@
 /*============= get an estimate ===============*/
 
 #accordionPro175 div .estimate, #accordionPro176 div .estimate {
-  background: #cc3333;
+  background: #a71f35;
   color: #fff;
   width: 200px;
   margin-left: 40px;
@@ -22,11 +22,11 @@
 
 #accordionPro175.basic .slide>h2, #accordionPro176.basic .slide>h2 {
   background: #ccc;
-  color: #000;
+  color: #323232;
 }
 
 #accordionPro175.basic .selected>h2, #accordionPro176.basic .selected>h2  {
-  background: #cc3333;
+  background: #c21a24;
   color: #fff;
 }
 

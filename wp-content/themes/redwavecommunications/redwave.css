@@ -11,9 +11,9 @@ General
 
 .breadcrumbs {
     padding: 0 15px;
-    color: #cc3333;
+    color: #a71f35;
     font-size: 90px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: lighter;
 }
 
@@ -24,7 +24,7 @@ General
 }
 
 .red {
-    color: #cc3333;
+    color: #a71f35;
 }
 
 .mag {
@@ -36,25 +36,17 @@ General
 }
 
 a {
-    color: #cc3333;
+    color: #a71f35;
     text-decoration: none;
 }
 
 a:hover, a:focus {
-    color: #fff;
+    color: #c21a24;
     text-decoration: none;
 }
 
 .buttons {
     padding: 0 0 0 5px;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-    color: #fff;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: #999;
 }
 
 .display {
@@ -64,6 +56,13 @@ a:hover, a:focus {
 
 .pad {
     padding: 0 15px;
+}
+
+p {
+    font: 1.3em Helvetica, Arial, san-serif;
+    line-spacing: 120%;
+    margin-bottom: 18px;
+    color: #323232;
 }
 
 /*=======================================================================
@@ -95,12 +94,15 @@ navbar css
     color: #fff;
 }
 
-.navbar-inverse {
-    background-color: #666;
+.navbar li a:hover, .navbar li a:focus, .navbar li a:active {
+    background: #a71f35;
 }
 
+
+
 .navbar ul li:hover:after{
-    border-bottom: 5px solid #cc3333;
+    border-bottom: 5px solid #a71f35;
+    background: #c21a24;
     content: "";
     padding: 3px 0 0 0;
     left: 0;
@@ -109,7 +111,9 @@ navbar css
 }
 
 #navbar {
-    background: #666;
+    background: #5b5b5b;
+    font: 1em Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
     border: none;
     width: 100%;
     z-index: 10;
@@ -155,10 +159,11 @@ logo container
 }
 
 #tagline {
-    color: #000;
+    color: #5b5b5b;
+    font: italic 1.6em "Times New Roman";
     position: absolute;
-    top: 80px;
-    left: 250px;
+    top: 70px;
+    left: 240px;
 }
 
 /* =====================================================
@@ -175,6 +180,8 @@ footer {
 #footer span {
     position: relative;
     top: 20px;
+    font: 0.875em Helvetica, Arial, san-serif;
+    text-transform: uppercase;
     margin: 30px 0 0 0;
     padding: 0 0 0 30px;
 }
@@ -184,14 +191,11 @@ footer {
     bottom: 0px;
     height: 40px;
     width: 100%;
-    font-weight: 500;
 }
 
-#footer li {
-    float: left;
-    padding: 0 10px;
+#footer img {
+    padding-top: 10px;
 }
-
 
 /* ==================================================================
 ABOUT US STYLES
@@ -202,26 +206,31 @@ ABOUT US STYLES
 }
 
 .about-top {
-    background: #cc3333 url("img/about-us.png") no-repeat left;
+    background: #a71f35 url("img/about-us.png") no-repeat left;
     background-size: 100% 100%;
     color: #fff;
     padding: 10px 20px;
     height: 319px;
 }
 .about-bottom {
-    margin: 0 10px 0 0;
-    padding: 20px 30px;
+    font-size: 16px;
+    margin: 0 20px 0 0;
+    padding: 20px 20px 20px 20px;
     min-height: 350px;
     text-align: left;
 }
 
 #cert {
-    padding:0 20px;
+    padding:0 30px;
+}
+
+#cert h4 {
+    margin: 0 0 15px 0;
 }
 
 #about {
-    padding: 30px 0;
-    margin: 0 0;
+    padding: 45px 0;
+    margin: 0 0 0 30px;
     line-height: 300%;
 }
 
@@ -252,6 +261,13 @@ RESIDENTIAL AND BUSINESS STYLES
     text-align: right;
 }
 
+#left h4, #right h4 {
+    font: 2.25em Helvetica, Arial, san-serif;
+    font-weight: lighter;
+    color: #a71f35;
+    line-spaceing: 104%;
+}
+
 #left li {
     font: 16px Helvetica,Arial,san-serif;
     margin-bottom: 15px;
@@ -276,15 +292,24 @@ RESIDENTIAL AND BUSINESS STYLES
 #getestimate {
     padding: 10px 0;
     position: absolute;
-    color: #fff;
-    background-color: #cc3333;
+    background-color: #a71f35;
+    font: 1.2em Helvetica, Arial, san-serif;
+    font-weight: bold;
     opacity: .90;
     z-index: 3;
-    top: 75%;
+    top: 80%;
     left: 45%;
     height: 40px;
     width: 150px;
     text-align: center;
+}
+
+#getestimate:hover {
+    background-color: #c21a24;
+}
+
+#getestimate a, #getestimate a:hover {
+    color: #fafafa;
 }
 
 .business-container{
@@ -295,7 +320,7 @@ RESIDENTIAL AND BUSINESS STYLES
 }
 
 .business-container a:hover, a:focus {
-    color: #cc3333;
+    color: #a71f35;
 }
 
 
@@ -328,7 +353,7 @@ SERVICES STYLES
 }
 
 .service {
-    background-color: #cc3333;
+    background-color: #a71f35;
     color: #fff;
     margin: 0 0 10px 0;
     width: 100%;
@@ -360,24 +385,25 @@ SYSTEMS STYLES
 =====================================================================*/
 .grid-system {
     position: relative;
-    height: 140px;
+    height: 156px;
+    width: 196px;
     margin: 0 0 0 20px;
     padding: 0 0 0 0;
     background: #fff;
-    font: 14px "Helvetica Neue";
+    font: 14px Helvetica, Arial, san-serif;
 }
 
 .image {
-    width: auto;
-    height: 75%;
+    width: 196px;
+    height: 156px;
     background: #999;
 }
 
 .imgdesc {
     height: 25%;
     color: #fff;
-    background-color: #cc3333;
-    font-family: "Helvetica Neue";
+    background-color: #a71f35;
+    font-family: Helvetica, Arial, san-serif;
     padding: 10px 0 0 5px;
 }
 
@@ -428,6 +454,21 @@ CONTACT US STYLES
     height: 100px;
 }
 
+#contact {
+    margin: 0 0 0 60px;
+}
+
+#contact h1 {
+    margin: 0 0 40px 0;
+}
+
+.submit {
+    border-radius: 0px;
+    background: #a71f35;
+    color: #fff;
+    font-family: Helvetica, Arial, san-serif;
+    padding: 5px 20px;
+}
 /* ============== Descriptions Box ================*/
 
 .description {
@@ -449,7 +490,7 @@ CONTACT US STYLES
     position: absolute;
     z-index: 1000;
     width: 400px;
-    border: 2px solid #000;
+    border: 2px solid #323232;
 }
 
 .infolist {
@@ -480,7 +521,7 @@ MEDIA QUERIES
 
     #left {
         background-image: none;
-        border: 1px solid #000;
+        border: 1px solid #323232;
         margin: 5px 0;
         padding: 15px 0;
         min-height: 200px;
@@ -490,7 +531,7 @@ MEDIA QUERIES
 
     #right {
         background-image: none;
-        border: 1px solid #000;
+        border: 1px solid #323232;
         margin: 5px 0;
         padding: 10px 0;
         min-height: 200px;

@@ -32,10 +32,8 @@
 
         <div class="<?php echo ($cols == 1) ? 'col-md-offset-4' : '' ?> col-md-4 col-sm-24 col-xs-24">
             <div class="grid-system">
-                <div class="image" style="background:url('<?php echo $src[0]; ?>') center no-repeat; background-size: cover;"></div>
-                <div class="imgdesc">
-                    <?php echo types_render_field('system-name', array('output' => 'html')); ?>
-                </div><!-- end image description -->
+                <div class="image" style="background:url('<?php echo $src[0]; ?>'); background-size: 196px 156px;"></div>
+
                 <div class="infocontainer infolist">
                     <img id="tool-tip" src="<?php echo get_template_directory_uri() ?>/img/tool-tip.png" />
                     <div class="sys-desc col-md-14">
